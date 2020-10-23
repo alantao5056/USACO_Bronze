@@ -1,14 +1,22 @@
-import operator
+def getLeaders(cows):
+  leaders = set()
+  greatestMilk = -1000
+  for name, milk in cows.items():
+    if milk > greatestMilk:
+      leaders = {name}
+      greatestMilk = milk
+    elif milk == greatestMilk:
+      leaders.add(name)
+  return leaders
 
 def getNumOfTimesToChange(cowMilkLog):
   cowMilkLog = sorted(cowMilkLog)
-  lastLeaders = []
+  lastLeaders = {}
   cows = {'Bessie': 7, 'Elsie': 7, 'Mildred': 7}
   count = 0
   for cow in cowMilkLog:
     cows[cow[1]] += cow[2]
-    maxInCows = max(cows.values())
-    leaders = [k for k,v in cows.items() if v == maxInCows]
+    leaders = getLeaders(cows)
     if leaders != lastLeaders:
       count += 1
     lastLeaders = leaders
