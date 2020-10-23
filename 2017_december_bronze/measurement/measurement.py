@@ -11,7 +11,7 @@ def getLeaders(cows):
 
 def getNumOfTimesToChange(cowMilkLog):
   cowMilkLog = sorted(cowMilkLog)
-  lastLeaders = {}
+  lastLeaders = set()
   cows = {'Bessie': 7, 'Elsie': 7, 'Mildred': 7}
   count = 0
   for cow in cowMilkLog:
