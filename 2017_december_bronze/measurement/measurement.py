@@ -19,9 +19,8 @@ def getNumOfTimesToChange(cowMilkLog):
     leaders = getLeaders(cows)
     if leaders != lastLeaders:
       count += 1
-    lastLeaders = leaders
-  return count
-    
+      lastLeaders = leaders
+  return count 
 
 def main(inputFile, outputFile):
   measurementInput = open(inputFile, 'r')
