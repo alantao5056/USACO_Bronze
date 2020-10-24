@@ -1,10 +1,10 @@
 def getCrossings(cows):
-  cowLog = {}
+  cowLog = [-1] * 11
   count = 0
   for cow in cows:
     cowID = cow[0]
     cowSide = cow[1]
-    if cowID not in cowLog:
+    if cowLog[cowID] == -1:
       cowLog[cowID] = cowSide
     elif cowLog[cowID] != cowSide:
       count += 1

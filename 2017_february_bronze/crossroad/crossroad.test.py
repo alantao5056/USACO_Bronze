@@ -1,5 +1,5 @@
 import unittest
-from crossroad import main
+from crossroad2 import main
 
 class crossroadTest(unittest.TestCase):
 
