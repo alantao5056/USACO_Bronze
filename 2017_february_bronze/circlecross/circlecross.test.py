@@ -1,5 +1,5 @@
 import unittest
-from circlecross import main
+from circlecross2 import main
 
 class circlecrossTest(unittest.TestCase):
 
