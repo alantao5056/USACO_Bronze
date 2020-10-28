@@ -1,12 +1,12 @@
 def getMinTimeFinish(cows):
   cows = sorted(cows)
   curTime = cows[0][0] + cows[0][1]
-  for i in range(0, len(cows) - 1):
-    timeTakesToFinish = cows[i + 1][0] + cows[i + 1][1]
-    if curTime > cows[i + 1][0]:
+  for i in range(1, len(cows)):
+    if curTime > cows[i][0]:
       # overlapped
-      curTime += cows[i + 1][1]
+      curTime += cows[i][1]
     else:
+      timeTakesToFinish = cows[i][0] + cows[i][1]
       curTime = timeTakesToFinish
   return curTime
     
