@@ -9,8 +9,8 @@ def getCrossingPairs(log: str):
     else:
       keys = list(logDict.keys())
       # vals = list(logDict.values())
-      for i in range(0, len(keys) - 1):
-        logDict[keys[i]].discard(s)
+      for k in keys:
+        logDict[k].discard(s)
       count += len(logDict.pop(s))
   return count
 
