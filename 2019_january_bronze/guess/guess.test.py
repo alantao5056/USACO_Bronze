@@ -1,8 +1,8 @@
-import unittest
-from speeding2 import main
+import unittest 
+from guess import main
 
-class speedingTest(unittest.TestCase):
-
+class guessTest(unittest.TestCase):
+  
   testDataFolder = 'test'
 
   def do_test(self, testNumber):
@@ -16,7 +16,7 @@ class speedingTest(unittest.TestCase):
     expectedOut.close()
     actualOut.close()
     self.assertEqual(actualLines, expectedLines)
-
+  
 def generate_test(testNumber):
   def test(self):
     self.do_test(testNumber)
@@ -26,5 +26,5 @@ if __name__ == '__main__':
   for i in range(1, 11):
     test_name = 'test_%s' % str(i)
     test = generate_test(i)
-    setattr(speedingTest, test_name, test)
+    setattr(guessTest, test_name, test)
   unittest.main()
