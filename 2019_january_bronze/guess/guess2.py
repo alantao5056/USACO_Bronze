@@ -1,17 +1,15 @@
+def getRidOfNotChar(animals, char):
+  for k, v in animals.items():
+    if char not in v:
+      del animals[k]
+
+
 def getMaxYes(animals: dict, characteristics: dict):
-  maxCount = -1
-  for animal, v in animals.items():
-    count = 0
-    falseCount = 0
-    for ele in v:
-      if characteristics[ele]:
-        count += 1
-      else:
-        falseCount += 1
-    if falseCount >= 1:
-      count += 1
-    maxCount = max(maxCount, count)
-  return maxCount
+  animalsCopy = animals.copy()
+  for k, v in animals.items():
+    for char in v:
+      if characteristics[char]:
+        getRidOfNotChar(animalsCopy, char)
 
 
 def main(inputFile: str, outputFile: str):

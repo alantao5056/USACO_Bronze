@@ -1,7 +1,8 @@
 import unittest 
 from guess import main
 
-class guessTest(unittest.TestCase):
+
+class GuessTest(unittest.TestCase):
   
   testDataFolder = 'test'
 
@@ -16,15 +17,17 @@ class guessTest(unittest.TestCase):
     expectedOut.close()
     actualOut.close()
     self.assertEqual(actualLines, expectedLines)
-  
+
+
 def generate_test(testNumber):
   def test(self):
     self.do_test(testNumber)
   return test
 
+
 if __name__ == '__main__':
   for i in range(1, 11):
     test_name = 'test_%s' % str(i)
     test = generate_test(i)
-    setattr(guessTest, test_name, test)
+    setattr(GuessTest, test_name, test)
   unittest.main()
