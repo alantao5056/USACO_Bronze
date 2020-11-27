@@ -1,11 +1,13 @@
 def getConnectedToAll(connectionList, N):
-  negativeOneCount = connectionList.count(-1)
-  if negativeOneCount == 2:
-    for i in range(1, len(connectionList)):
-      if connectionList[i] == -1:
-        return i
-  else:
-    return -1
+  firstNegative = False
+  firstNegativeIndex = -1
+  for i in range(1, N + 1):
+    if connectionList[i] == -1:
+      if firstNegative:
+        return -1
+      firstNegative = True
+      firstNegativeIndex = i
+  return firstNegativeIndex
 
 
 def main(inputFile, outputFile):
