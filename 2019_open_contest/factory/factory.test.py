@@ -1,5 +1,5 @@
 import unittest
-from factory import main
+from factory2 import main
 
 
 class FactoryTest(unittest.TestCase):
