@@ -1,7 +1,8 @@
-import unittest
-from triangles import main
+import unittest 
+from lineup import main
 
-class TrianglesTest(unittest.TestCase):
+class LineupTest(unittest.TestCase):
+  
   testDataFolder = 'test'
 
   def do_test(self, testNumber):
@@ -15,7 +16,7 @@ class TrianglesTest(unittest.TestCase):
     expectedOut.close()
     actualOut.close()
     self.assertEqual(actualLines, expectedLines)
-
+  
 def generate_test(testNumber):
   def test(self):
     self.do_test(testNumber)
@@ -25,5 +26,5 @@ if __name__ == '__main__':
   for i in range(1, 11):
     test_name = 'test_%s' % str(i)
     test = generate_test(i)
-    setattr(TrianglesTest, test_name, test)
+    setattr(LineupTest, test_name, test)
   unittest.main()
