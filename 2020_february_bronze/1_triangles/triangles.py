@@ -33,7 +33,7 @@ def checkIfValid(tup: tuple):
 def findMaxArea(N: int, posts: list) -> int:
   maxArea = -1
   for p in combinations(posts, 3):
-    print(p)
+    # print(p)
     ifValid = checkIfValid(p)
     if ifValid:
       maxArea = max(maxArea, (ifValid[0] * ifValid[1]) / 2)
