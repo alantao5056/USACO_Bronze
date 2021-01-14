@@ -1,13 +1,13 @@
 def getMinFlip(A, B, N):
   count = 0
-  splitStr = ' '
+  sequence = True
   for i in range(0, N):
     if A[i] == B[i]:
-      if splitStr[-1] != ' ':
-        splitStr += ' '
+      if not sequence:
+        sequence = True
         count += 1
     else:
-      splitStr += B[i]
+      sequence = False
   return count
 
 def main(inputFile, outputFile):
