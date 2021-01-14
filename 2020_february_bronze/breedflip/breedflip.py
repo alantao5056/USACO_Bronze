@@ -8,6 +8,8 @@ def getMinFlip(A, B, N):
         count += 1
     else:
       sequence = False
+  if not sequence:
+    return count + 1
   return count
 
 def main(inputFile, outputFile):
