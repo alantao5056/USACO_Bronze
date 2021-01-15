@@ -36,7 +36,7 @@ def main(inputFile: str, outputFile: str):
     line = gymnasticsInput.readline().strip().split()
     performance.append([int(x) for x in line])
 
-  gymnasticsOutput.write(f'{getConsistantCows(performance, K, N)}\n')
+  gymnasticsOutput.write(str(getConsistantCows(performance, K, N)) + '\n')
 
   gymnasticsInput.close()
   gymnasticsOutput.close()
