@@ -1,5 +1,5 @@
 import unittest 
-from convention import main
+from convention2 import main
 
 class ConventionTest(unittest.TestCase):
   
