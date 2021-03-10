@@ -1,5 +1,5 @@
 import unittest
-from photo import main
+from photo2 import main
 
 class PhotoTest(unittest.TestCase):
 
