@@ -1,5 +1,3 @@
-import math
-
 def getLetter(s: str, p: int) -> str:
   cur = len(s)
   while cur <= p:
@@ -13,8 +11,6 @@ def getLetter(s: str, p: int) -> str:
       p = p - cur - 1
   return s[p - 1]
 
-  
-  
 
 def main(inputFile, outputFile):
   cowcodeInput = open(inputFile, 'r')
@@ -27,6 +23,5 @@ def main(inputFile, outputFile):
   
   cowcodeInput.close()
   cowcodeOutput.close()
-
 
 main('cowcode.in', 'cowcode.out')
