@@ -1,5 +1,5 @@
 import unittest 
-from hps import main
+from hps2 import main
 
 class hpsTest(unittest.TestCase):
   
