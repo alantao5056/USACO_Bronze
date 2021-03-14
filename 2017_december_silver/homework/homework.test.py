@@ -1,5 +1,5 @@
 import unittest 
-from homework import main
+from homework2 import main
 
 class HomeworkTest(unittest.TestCase):
   
