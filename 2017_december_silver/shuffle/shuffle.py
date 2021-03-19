@@ -1,3 +1,10 @@
+def resolveCycle(cur, pos, notes):
+  while True:
+    notes[cur - 1] = 2
+    if notes[pos[cur - 1] - 1] == 2:
+      break
+    cur = pos[cur - 1]
+
 def getContainCows(N, pos):
   allSet = set([i for i in range(1, N + 1)])
   # finding which cows are not visited
@@ -6,18 +13,33 @@ def getContainCows(N, pos):
       allSet.remove(p)
   
   allSet = list(allSet)
-  count = 0 # return this
-  
+  notes = [0] * N
+
   for c in allSet:
     # start search
+    start = c
     cur = c
     while True:
-      if pos[cur - 1] == -1:
+      if notes[cur - 1] == 1:
+        # ran into 1, found cycle
+        resolveCycle(cur, pos, notes)
         break
-      cur = pos[cur - 1]
-      pos[cur - 1] = -1
-      count += 1
-  return N-count
+      elif notes[cur - 1] == 0:
+        # normal, unvisited
+        notes[cur - 1] = 1
+        cur = pos[cur - 1]
+      else:
+        # is -1 or 2
+        break
+    # cycle and mark -1
+    while True:
+      if notes[start - 1] == 1:
+        notes[start - 1] = -1
+      else:
+        break
+      start = pos[start - 1]
+    
+  return N - notes.count(-1)
       
 
 def main(inputFile, outputFile):
