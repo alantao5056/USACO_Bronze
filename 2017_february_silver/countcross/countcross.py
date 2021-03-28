@@ -36,7 +36,6 @@ def main(inputFile, outputFile):
   N, K, R = int(N), int(K), int(R)
   
   roads = {}
-  cows = []
   cowsSet = set()
   notWentTo = set()
   
@@ -55,18 +54,12 @@ def main(inputFile, outputFile):
     line = countcrossInput.readline().strip().split()
     cow = (int(line[0]) - 1, int(line[1]) - 1,)
     cowsSet.add(cow)
-    cows.append(cow)
-  
-  # print(cows)
-  # print(roads)
-  arr = []
+
   total = K * (K - 1) // 2
   while len(notWentTo) != 0:
     start = notWentTo.pop()
     notWentTo.add(start)
     result = run2(start, start, set(), notWentTo, roads, cowsSet, 0)
-    if result != 0:
-      arr.append(result)
     total -= result * (result - 1) // 2
   countcrossOutput.write(str(total) + '\n')
   
