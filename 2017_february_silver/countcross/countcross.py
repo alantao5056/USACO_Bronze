@@ -1,18 +1,3 @@
-# def run(startPos, ranSet, notWentTo, roads, cowsSet, count):
-#   possiblePos = [(startPos[0] - 1, startPos[1],), (startPos[0] + 1, startPos[1],), (startPos[0], startPos[1] + 1,), (startPos[0], startPos[1] - 1,)]
-#   ranSet.add(startPos)
-  
-#   for p in possiblePos:
-#     if p in roads: # checking if not out of range
-#       if p not in ranSet: # check if already ran
-#         if p not in roads[startPos]: # check if there's a road
-#           notWentTo.remove(p)
-#           ranSet.add(p)
-#           if p in cowsSet:
-#             count += 1
-#           count = run(p, ranSet, notWentTo, roads, cowsSet, count)
-#   return count
-
 def run2(lastPos, curPos, ranSet, notWentTo, roads, cowsSet, count):
   if (curPos not in roads) or (curPos in ranSet) or (curPos in roads[lastPos]): # check if out of range
     return count
