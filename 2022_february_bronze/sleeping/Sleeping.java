@@ -14,8 +14,10 @@ public class Sleeping {
       for (int j = 0; j < N; j++) {
         nums[j] = sc.nextInt();
         totalSum += nums[j];
-      }
+        for (int k = 0; k < N; k++) {
 
+        }
+      }
       System.out.println(solve(N, nums, totalSum));
     }
 
@@ -46,7 +48,7 @@ public class Sleeping {
     while (idx < N) {
       curSum += nums[idx];
       if (curSum > targetSum) {
-        // can't form
+        // cant form
         return -1;
       } else if (curSum == targetSum) {
         // found one
